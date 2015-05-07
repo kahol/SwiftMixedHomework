@@ -14,7 +14,6 @@
 		4025E0A31970634500947A86 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4025E0A21970634500947A86 /* AppDelegate.m */; };
 		4025E0A61970634500947A86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4025E0A41970634500947A86 /* Main.storyboard */; };
 		4025E0A91970634500947A86 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4025E0A81970634500947A86 /* RootViewController.m */; };
-		4025E0AC1970634500947A86 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4025E0AB1970634500947A86 /* DetailViewController.m */; };
 		4025E0AE1970634600947A86 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4025E0AD1970634600947A86 /* Images.xcassets */; };
 		4025E0D11970669100947A86 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4025E0D01970669000947A86 /* Settings.bundle */; };
 		4025E0D81970A9E200947A86 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4025E0DA1970A9E200947A86 /* Localizable.strings */; };
@@ -35,8 +34,6 @@
 		4025E0A51970634500947A86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4025E0A71970634500947A86 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		4025E0A81970634500947A86 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		4025E0AA1970634500947A86 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		4025E0AB1970634500947A86 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		4025E0AD1970634600947A86 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4025E0D01970669000947A86 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		4025E0E11970AA1E00947A86 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Mountains.plist; sourceTree = "<group>"; };
@@ -104,8 +101,6 @@
 				4025E0A71970634500947A86 /* RootViewController.h */,
 				4025E0A81970634500947A86 /* RootViewController.m */,
 				A13F357D1AFB328200EEDD14 /* DetailViewController.swift */,
-				4025E0AA1970634500947A86 /* DetailViewController.h */,
-				4025E0AB1970634500947A86 /* DetailViewController.m */,
 				4025E0AD1970634600947A86 /* Images.xcassets */,
 				4025E0991970634500947A86 /* Supporting Files */,
 			);
@@ -199,10 +194,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4025E0A31970634500947A86 /* AppDelegate.m in Sources */,
-				4025E0A91970634500947A86 /* RootViewController.m in Sources */,
 				A13F357E1AFB328200EEDD14 /* DetailViewController.swift in Sources */,
+				4025E0A91970634500947A86 /* RootViewController.m in Sources */,
 				4025E09F1970634500947A86 /* main.m in Sources */,
-				4025E0AC1970634500947A86 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

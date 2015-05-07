@@ -46,13 +46,17 @@
  */
 
 #import "RootViewController.h"
-#import "DetailViewController.h"
+#import "InternationalMountains-Swift.h"
 
 /* key name for the application preference in our Settings.bundle */
 NSString *kSettingKey = @"sort";
 
 // key for Mountain name, constant string declared in DetailViewController
-extern const NSString *kMountainNameString;
+
+// **PROBLEM** I could not get extern to work, the compiler kept saying
+// kMountainNameString symbol not found, even though it's defined in
+// DetailViewController.swift. So I just give it a value here instead.
+const NSString *kMountainNameString = @"name";
 
 @interface RootViewController ()
 @property (nonatomic, strong) NSArray *mountains;

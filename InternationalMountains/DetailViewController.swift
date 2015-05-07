@@ -2,8 +2,6 @@
     DetailViewController.swift
     InternationalMountains
 
-    Created by Kaho Lo on 5/6/15.
-
     A simple UIViewController that shows a localized label that contains
     detail information, including height and date data, about the user-
     selected mountain.
@@ -22,8 +20,8 @@ class DetailViewController: UIViewController {
     var mountainDictionary = NSDictionary()
     
     // Formatter instances that we'll re-use.
-    var numberFormatter = NSNumberFormatter()
-    var dateFormatter = NSDateFormatter()
+    private var numberFormatter = NSNumberFormatter()
+    private var dateFormatter = NSDateFormatter()
     
     @IBOutlet weak var mountainDetails: UILabel!
     
@@ -32,9 +30,9 @@ class DetailViewController: UIViewController {
         
         self.updateLabelWithMountainName(self.mountainDictionary[kMountainNameString] as! String, height: self.mountainDictionary[kMountainHeightString] as! NSNumber, climbedDate: self.mountainDictionary[kMountainClimbedDateString] as? NSDate)
 
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("currentLocaleOrTimeZoneDidChange"), name: NSCurrentLocaleDidChangeNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "currentLocaleOrTimeZoneDidChange:", name: NSCurrentLocaleDidChangeNotification, object: nil)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("currentLocaleOrTimeZoneDidChange"), name: NSSystemTimeZoneDidChangeNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "currentLocaleOrTimeZoneDidChange:", name: NSSystemTimeZoneDidChangeNotification, object: nil)
     }
     
     override func viewDidLayoutSubviews() {
@@ -87,7 +85,9 @@ class DetailViewController: UIViewController {
         var format: NSString = "%d"
         var height = heightNumber.integerValue
         
-        // I had a rough time with this! -Kaho
+        // **PROBLEM** I had a rough time with this. Trying to rewrite the check
+        // they did in Objective-C did not work, it complained about trying to
+        // give the logical binary && operator two Bools and it failed.
         var usesMetricSystemNumber: NSNumber? = NSLocale.currentLocale().objectForKey(NSLocaleUsesMetricSystem) as? NSNumber
         var usesMetricSystem: Bool = usesMetricSystemNumber != nil ? usesMetricSystemNumber!.boolValue : false
         
