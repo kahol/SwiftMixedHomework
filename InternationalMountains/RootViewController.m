@@ -47,6 +47,7 @@
 
 #import "RootViewController.h"
 #import "DetailViewController.h"
+#import "InternationalMountains-Swift.h"
 
 /* key name for the application preference in our Settings.bundle */
 NSString *kSettingKey = @"sort";
