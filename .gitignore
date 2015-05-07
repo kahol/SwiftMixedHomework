@@ -1,0 +1,9 @@
+.DS_Store
+*.xccheckout
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcuserstate
+xcuserdata
+profile
