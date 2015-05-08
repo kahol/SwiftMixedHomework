@@ -28,7 +28,7 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.updateLabelWithMountainName(self.mountainDictionary[kMountainNameString] as! String, height: self.mountainDictionary[kMountainHeightString] as! NSNumber, climbedDate: self.mountainDictionary[kMountainClimbedDateString] as? NSDate)
+        updateLabelWithMountainName(mountainDictionary[kMountainNameString] as! String, height: mountainDictionary[kMountainHeightString] as! NSNumber, climbedDate: mountainDictionary[kMountainClimbedDateString] as? NSDate)
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "currentLocaleOrTimeZoneDidChange:", name: NSCurrentLocaleDidChangeNotification, object: nil)
         
@@ -38,8 +38,8 @@ class DetailViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        self.mountainDetails.preferredMaxLayoutWidth = self.mountainDetails.bounds.size.width
-        self.view.layoutIfNeeded()
+        mountainDetails.preferredMaxLayoutWidth = mountainDetails.bounds.size.width
+        view.layoutIfNeeded()
     }
 
     // MARK: Notification Handler
@@ -47,7 +47,7 @@ class DetailViewController: UIViewController {
     // When user changed the locale (region format) or time zone in Settings,
     // we are notified here to update the date format in UI.
     func currentLocaleOrTimeZoneDidChange(notif: NSNotification) {
-        self.updateLabelWithMountainName(self.mountainDictionary[kMountainNameString] as! String, height: self.mountainDictionary[kMountainHeightString] as! NSNumber, climbedDate: self.mountainDictionary[kMountainClimbedDateString] as? NSDate)
+        updateLabelWithMountainName(mountainDictionary[kMountainNameString] as! String, height: mountainDictionary[kMountainHeightString] as! NSNumber, climbedDate: mountainDictionary[kMountainClimbedDateString] as? NSDate)
     }
     
     // MARK: Helper Methods
@@ -61,15 +61,15 @@ class DetailViewController: UIViewController {
         
         if climbedDate != nil {
             format = NSLocalizedString("sentenceFormat", comment: "A sentence with the mountain's name (first parameter), height (second parameter), and climbed date (third parameter)")
-            sentence = String(format: format as String, name, self.heightAsString(height), self.dateAsString(climbedDate!))
+            sentence = String(format: format as String, name, heightAsString(height), dateAsString(climbedDate!))
         } else {
             // Some mountains do not have a climbed date in our database, so use
             // an alternate label sentence for these.
             format = NSLocalizedString("undatedSentenceFormat", comment: "A sentence with the mountain's name (first parameter), and height (second parameter), but no climbed date")
-            sentence = String(format: format as String, name, self.heightAsString(height))
+            sentence = String(format: format as String, name, heightAsString(height))
         }
         
-        self.mountainDetails.text = sentence as String
+        mountainDetails.text = sentence as String
     }
 
     /* Create a single string expressing a mountain's height.  Based on the
